@@ -590,6 +590,10 @@
           </div>
           <h3 class="font-display text-xl font-semibold text-sierra-cream mb-2">Security Services</h3>
           <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">Professional security guards trained to protect your assets, premises, and personnel.</p>
+          <div class="mt-4 pt-3 border-t border-white/[0.06]">
+            <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-mist/40">Starting from</span>
+            <p class="font-display text-2xl font-semibold text-sierra-gold mt-1">SLE 3,500<span class="text-sm font-body font-normal text-sierra-mist/40 ml-1">& upwards</span></p>
+          </div>
         </div>
 
         <!-- 2: Logistics -->
@@ -837,7 +841,7 @@
       <div class="gold-rule w-full mb-8"></div>
 
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="font-body text-xs text-sierra-mist/30">&copy; 2025 Sierra 24/7 Securicor and Logistics Services SL Ltd. All rights reserved.</p>
+        <p class="font-body text-xs text-sierra-mist/30">&copy; <span id="footerYear"></span> Sierra 24/7 Securicor and Logistics Services SL Ltd. All rights reserved.</p>
         <p class="font-body text-xs text-sierra-mist/30">Designed with precision in Freetown</p>
       </div>
     </div>
@@ -848,6 +852,9 @@
   <script>
     // Initialize Lucide icons
     lucide.createIcons();
+
+    // ──── Auto-update copyright year ────
+    document.getElementById('footerYear').textContent = new Date().getFullYear();
 
     // ──── Flot Checkout ────
     const FLOT_URL = 'https://pay.flotme.ai/sierra247securityandlogistics';
