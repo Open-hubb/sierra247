@@ -52,13 +52,13 @@
     html {
       scroll-behavior: smooth;
       scrollbar-width: thin;
-      scrollbar-color: #C8A961 #0A0A0A;
+      scrollbar-color: #C8A961 #FAFAF8;
     }
 
     body {
       font-family: 'DM Sans', sans-serif;
-      background: #0A0A0A;
-      color: #F5F0E8;
+      background: #FAFAF8;
+      color: #1A1A1A;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -66,7 +66,7 @@
 
     ::selection {
       background: #C8A961;
-      color: #0A0A0A;
+      color: #FFFFFF;
     }
 
     /* Grain overlay */
@@ -98,7 +98,7 @@
       color: #C8A961;
       font-family: 'DM Sans', sans-serif;
       font-weight: 500;
-      font-size: 0.85rem;
+      font-size: 1rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       text-decoration: none;
@@ -109,7 +109,7 @@
 
     .mag-btn:hover {
       background: #C8A961;
-      color: #0A0A0A;
+      color: #FFFFFF;
     }
 
     .mag-btn:focus-visible {
@@ -123,7 +123,7 @@
 
     .mag-btn-fill {
       background: #C8A961;
-      color: #0A0A0A;
+      color: #FFFFFF;
       border-color: #C8A961;
     }
 
@@ -148,16 +148,18 @@
     .service-card {
       position: relative;
       padding: 2.5rem 2rem;
-      border: 1px solid rgba(200, 169, 97, 0.08);
-      background: rgba(26, 26, 26, 0.5);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: #FFFFFF;
       backdrop-filter: blur(10px);
-      transition: border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: default;
     }
 
     .service-card:hover {
       border-color: rgba(200, 169, 97, 0.3);
-      background: rgba(26, 26, 26, 0.8);
+      background: #FFFFFF;
+      box-shadow: 0 8px 30px rgba(200, 169, 97, 0.1);
       transform: translateY(-4px);
     }
 
@@ -206,8 +208,9 @@
     /* Floating nav */
     .nav-float {
       backdrop-filter: blur(20px) saturate(180%);
-      background: rgba(10, 10, 10, 0.8);
-      border: 1px solid rgba(200, 169, 97, 0.08);
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
     }
 
@@ -225,13 +228,13 @@
       height: 8px;
       border-radius: 50%;
       background: #C8A961;
-      box-shadow: 0 0 12px #C8A961, 0 0 24px rgba(200, 169, 97, 0.3);
+      box-shadow: 0 0 8px rgba(200, 169, 97, 0.4);
       animation: pulse-glow 2s ease-in-out infinite;
     }
 
     @keyframes pulse-glow {
-      0%, 100% { opacity: 1; box-shadow: 0 0 12px #C8A961, 0 0 24px rgba(200, 169, 97, 0.3); }
-      50% { opacity: 0.6; box-shadow: 0 0 6px #C8A961, 0 0 12px rgba(200, 169, 97, 0.15); }
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(200, 169, 97, 0.4); }
+      50% { opacity: 0.6; box-shadow: 0 0 4px rgba(200, 169, 97, 0.2); }
     }
 
     /* Split text */
@@ -243,7 +246,7 @@
 
     /* Gradient text */
     .text-gradient {
-      background: linear-gradient(135deg, #F5F0E8, #C8A961);
+      background: linear-gradient(135deg, #A68B4B, #8B7340);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -255,7 +258,7 @@
       width: 600px;
       height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(200, 169, 97, 0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(200, 169, 97, 0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -264,7 +267,7 @@
       position: fixed;
       inset: 0;
       z-index: 100;
-      background: rgba(10, 10, 10, 0.97);
+      background: rgba(255, 255, 255, 0.97);
       backdrop-filter: blur(30px);
       display: flex;
       flex-direction: column;
@@ -284,7 +287,7 @@
     .mobile-menu a {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2rem;
-      color: #F5F0E8;
+      color: #1A1A1A;
       text-decoration: none;
       letter-spacing: 0.05em;
       transition: color 0.3s ease;
@@ -306,7 +309,7 @@
       display: block;
       width: 28px;
       height: 1.5px;
-      background: #F5F0E8;
+      background: #1A1A1A;
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
     }
 
@@ -337,7 +340,7 @@
 
     /* Custom scrollbar webkit */
     ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #0A0A0A; }
+    ::-webkit-scrollbar-track { background: #FAFAF8; }
     ::-webkit-scrollbar-thumb { background: #C8A961; border-radius: 3px; }
 
     /* Flot checkout modal */
@@ -392,9 +395,9 @@
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      border: 1px solid rgba(200, 169, 97, 0.2);
-      background: rgba(10, 10, 10, 0.9);
-      color: #F5F0E8;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.9);
+      color: #1A1A1A;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -413,14 +416,14 @@
   <!-- ═══════════ NAVIGATION ═══════════ -->
   <nav class="nav-float fixed top-4 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-full flex items-center gap-8" id="navbar">
     <a href="#hero" class="flex items-center gap-2 shrink-0">
-      <img src="sierra-logo.png" alt="Sierra 24/7 Logo" class="h-16 w-auto" />
+      <img src="sierra-logo.png" alt="Sierra 24/7 Logo" class="h-24 w-auto" />
     </a>
 
     <div class="hidden md:flex items-center gap-8">
-      <a href="#about" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-mist hover:text-sierra-gold transition-colors duration-300">About</a>
-      <a href="#services" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-mist hover:text-sierra-gold transition-colors duration-300">Services</a>
-      <a href="#why" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-mist hover:text-sierra-gold transition-colors duration-300">Why Us</a>
-      <a href="#contact" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-mist hover:text-sierra-gold transition-colors duration-300">Contact</a>
+      <a href="#about" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-gold transition-colors duration-300">About</a>
+      <a href="#services" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-gold transition-colors duration-300">Services</a>
+      <a href="#why" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-gold transition-colors duration-300">Why Us</a>
+      <a href="#contact" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-gold transition-colors duration-300">Contact</a>
     </div>
 
     <button onclick="openFlot()" class="hidden md:inline-flex mag-btn mag-btn-fill text-xs py-2 px-5 rounded-full border-0">Pay Now</button>
@@ -459,13 +462,13 @@
 
       <!-- Main headline -->
       <h1 class="font-display font-semibold leading-[0.9] tracking-[-0.03em] mb-8">
-        <span class="block text-[clamp(2.5rem,8vw,7rem)] text-sierra-cream hero-title">Sierra</span>
+        <span class="block text-[clamp(2.5rem,8vw,7rem)] text-sierra-charcoal hero-title">Sierra</span>
         <span class="block text-[clamp(3rem,10vw,9rem)] text-gradient hero-title" style="font-style: italic;">24/7</span>
         <span class="block text-[clamp(1.2rem,3vw,2rem)] font-body font-light uppercase tracking-[0.35em] text-sierra-mist mt-4 hero-title">Securicor &amp; Logistics</span>
       </h1>
 
       <!-- Tagline -->
-      <p class="reveal font-body text-lg md:text-xl text-sierra-mist/80 max-w-xl mx-auto mb-10 leading-relaxed" style="line-height: 1.7;">
+      <p class="reveal font-body text-xl md:text-2xl text-sierra-slate/70 max-w-xl mx-auto mb-10 leading-relaxed" style="line-height: 1.7;">
         Professional security services built on trust, vigilance, and an unwavering commitment to your safety.
       </p>
 
@@ -483,16 +486,16 @@
 
     <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal">
-      <span class="font-body text-[10px] uppercase tracking-[0.3em] text-sierra-mist/40">Scroll</span>
+      <span class="font-body text-[10px] uppercase tracking-[0.3em] text-sierra-slate/40">Scroll</span>
       <div class="w-px h-12 bg-gradient-to-b from-sierra-gold/40 to-transparent scroll-line"></div>
     </div>
   </section>
 
 
   <!-- ═══════════ MARQUEE ═══════════ -->
-  <div class="py-6 border-t border-b border-white/[0.04] overflow-hidden">
+  <div class="py-6 border-t border-b border-black/[0.06] overflow-hidden">
     <div class="marquee-track">
-      <span class="flex items-center gap-12 px-6 text-sierra-mist/30 font-body text-sm uppercase tracking-[0.3em]">
+      <span class="flex items-center gap-12 px-6 text-sierra-slate/30 font-body text-sm uppercase tracking-[0.3em]">
         <span>Security Services</span><span class="text-sierra-gold/30">&bull;</span>
         <span>Logistics</span><span class="text-sierra-gold/30">&bull;</span>
         <span>Procurement</span><span class="text-sierra-gold/30">&bull;</span>
@@ -502,7 +505,7 @@
         <span>Generator Servicing</span><span class="text-sierra-gold/30">&bull;</span>
         <span>Cleaning Services</span><span class="text-sierra-gold/30">&bull;</span>
       </span>
-      <span class="flex items-center gap-12 px-6 text-sierra-mist/30 font-body text-sm uppercase tracking-[0.3em]">
+      <span class="flex items-center gap-12 px-6 text-sierra-slate/30 font-body text-sm uppercase tracking-[0.3em]">
         <span>Security Services</span><span class="text-sierra-gold/30">&bull;</span>
         <span>Logistics</span><span class="text-sierra-gold/30">&bull;</span>
         <span>Procurement</span><span class="text-sierra-gold/30">&bull;</span>
@@ -523,41 +526,41 @@
         <!-- Left -->
         <div>
           <span class="reveal-left font-body text-xs uppercase tracking-[0.3em] text-sierra-gold mb-4 block">Who We Are</span>
-          <h2 class="reveal-left font-display text-[clamp(2rem,5vw,4rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-sierra-cream mb-8">
+          <h2 class="reveal-left font-display text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-sierra-charcoal mb-8">
             Your Safety,<br>
             <span class="text-gradient" style="font-style: italic;">Our Priority</span>
           </h2>
           <div class="reveal-left gold-rule w-16 mb-8"></div>
-          <p class="reveal-left font-body text-sierra-mist/70 leading-[1.8] mb-6">
+          <p class="reveal-left font-body text-sierra-slate/80 leading-[1.8] mb-6">
             Sierra 24/7 Securicor and Logistics Services SL Ltd is a professional security and multi-service company headquartered in Freetown, Sierra Leone. Founded on January 1, 2023, we have rapidly established ourselves as a trusted partner for businesses and individuals seeking comprehensive protection and operational support.
           </p>
-          <p class="reveal-left font-body text-sierra-mist/70 leading-[1.8]">
+          <p class="reveal-left font-body text-sierra-slate/80 leading-[1.8]">
             Our business is unique because we go beyond conventional security. We provide professionally trained security guards to our clients while ensuring that every aspect of your safety and operational needs is met with the highest standards of excellence.
           </p>
         </div>
 
         <!-- Right — Stats -->
         <div class="reveal-right space-y-8">
-          <div class="p-8 border border-white/[0.04] bg-sierra-charcoal/30 backdrop-blur-sm">
+          <div class="p-8 border border-black/[0.06] bg-white backdrop-blur-sm">
             <div class="flex items-end gap-2 mb-3">
               <span class="font-display text-5xl md:text-6xl font-semibold text-sierra-gold counter" data-target="24">0</span>
               <span class="font-display text-5xl md:text-6xl font-semibold text-sierra-gold">/7</span>
             </div>
             <div class="stat-line w-full mb-3"></div>
-            <p class="font-body text-sm text-sierra-mist/60 uppercase tracking-[0.15em]">Round-the-clock protection</p>
+            <p class="font-body text-base text-sierra-slate/70 uppercase tracking-[0.15em]">Round-the-clock protection</p>
           </div>
 
           <div class="grid grid-cols-2 gap-4">
-            <div class="p-6 border border-white/[0.04] bg-sierra-charcoal/30 backdrop-blur-sm">
-              <span class="font-display text-4xl font-semibold text-sierra-cream counter" data-target="8">0</span>
-              <span class="font-display text-4xl font-semibold text-sierra-cream">+</span>
+            <div class="p-6 border border-black/[0.06] bg-white backdrop-blur-sm">
+              <span class="font-display text-4xl font-semibold text-sierra-charcoal counter" data-target="8">0</span>
+              <span class="font-display text-4xl font-semibold text-sierra-charcoal">+</span>
               <div class="stat-line w-12 mt-2 mb-2"></div>
-              <p class="font-body text-xs text-sierra-mist/60 uppercase tracking-[0.15em]">Core Services</p>
+              <p class="font-body text-xs text-sierra-slate/70 uppercase tracking-[0.15em]">Core Services</p>
             </div>
-            <div class="p-6 border border-white/[0.04] bg-sierra-charcoal/30 backdrop-blur-sm">
-              <span class="font-display text-4xl font-semibold text-sierra-cream">Since</span>
+            <div class="p-6 border border-black/[0.06] bg-white backdrop-blur-sm">
+              <span class="font-display text-4xl font-semibold text-sierra-charcoal">Since</span>
               <div class="stat-line w-12 mt-2 mb-2"></div>
-              <p class="font-body text-xs text-sierra-mist/60 uppercase tracking-[0.15em]">January 2023</p>
+              <p class="font-body text-xs text-sierra-slate/70 uppercase tracking-[0.15em]">January 2023</p>
             </div>
           </div>
         </div>
@@ -568,13 +571,13 @@
 
   <!-- ═══════════ SERVICES ═══════════ -->
   <section id="services" class="py-32 md:py-40 px-6 relative">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-sierra-charcoal/20 to-transparent pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-sierra-gold/[0.03] to-transparent pointer-events-none"></div>
 
     <div class="relative max-w-6xl mx-auto">
       <!-- Header -->
       <div class="text-center mb-20">
         <span class="reveal font-body text-xs uppercase tracking-[0.3em] text-sierra-gold mb-4 block">What We Do</span>
-        <h2 class="reveal font-display text-[clamp(2rem,5vw,4rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-sierra-cream">
+        <h2 class="reveal font-display text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-sierra-charcoal">
           Comprehensive<br>
           <span class="text-gradient" style="font-style: italic;">Solutions</span>
         </h2>
@@ -588,11 +591,11 @@
           <div class="card-icon">
             <i data-lucide="shield-check" class="w-7 h-7"></i>
           </div>
-          <h3 class="font-display text-xl font-semibold text-sierra-cream mb-2">Security Services</h3>
-          <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">Professional security guards trained to protect your assets, premises, and personnel.</p>
+          <h3 class="font-display text-2xl font-semibold text-sierra-charcoal mb-2">Security Services</h3>
+          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Professional security guards trained to protect your assets, premises, and personnel.</p>
           <div class="mt-4 pt-3 border-t border-white/[0.06]">
-            <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-mist/40">Starting from</span>
-            <p class="font-display text-2xl font-semibold text-sierra-gold mt-1">SLE 3,500<span class="text-sm font-body font-normal text-sierra-mist/40 ml-1">& upwards</span></p>
+            <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-slate/40">Starting from</span>
+            <p class="font-display text-2xl font-semibold text-sierra-gold mt-1">SLE 3,500<span class="text-sm font-body font-normal text-sierra-slate/40 ml-1">& upwards</span></p>
           </div>
         </div>
 
@@ -602,8 +605,8 @@
           <div class="card-icon">
             <i data-lucide="truck" class="w-7 h-7"></i>
           </div>
-          <h3 class="font-display text-xl font-semibold text-sierra-cream mb-2">Logistics</h3>
-          <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">End-to-end logistics management ensuring your goods reach their destination safely and on time.</p>
+          <h3 class="font-display text-2xl font-semibold text-sierra-charcoal mb-2">Logistics</h3>
+          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">End-to-end logistics management ensuring your goods reach their destination safely and on time.</p>
         </div>
 
         <!-- 3: Procurement -->
@@ -612,8 +615,8 @@
           <div class="card-icon">
             <i data-lucide="package-search" class="w-7 h-7"></i>
           </div>
-          <h3 class="font-display text-xl font-semibold text-sierra-cream mb-2">Procurement</h3>
-          <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">Strategic sourcing and procurement services to optimize your supply chain operations.</p>
+          <h3 class="font-display text-2xl font-semibold text-sierra-charcoal mb-2">Procurement</h3>
+          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Strategic sourcing and procurement services to optimize your supply chain operations.</p>
         </div>
 
         <!-- 4: Construction -->
@@ -622,8 +625,8 @@
           <div class="card-icon">
             <i data-lucide="hard-hat" class="w-7 h-7"></i>
           </div>
-          <h3 class="font-display text-xl font-semibold text-sierra-cream mb-2">Construction</h3>
-          <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">Reliable construction services delivered with precision, quality, and adherence to timelines.</p>
+          <h3 class="font-display text-2xl font-semibold text-sierra-charcoal mb-2">Construction</h3>
+          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Reliable construction services delivered with precision, quality, and adherence to timelines.</p>
         </div>
 
         <!-- 5: Vehicle Hire -->
@@ -632,8 +635,8 @@
           <div class="card-icon">
             <i data-lucide="car" class="w-7 h-7"></i>
           </div>
-          <h3 class="font-display text-xl font-semibold text-sierra-cream mb-2">Vehicle Hire</h3>
-          <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">Well-maintained fleet available for hire, suitable for corporate and personal transportation needs.</p>
+          <h3 class="font-display text-2xl font-semibold text-sierra-charcoal mb-2">Vehicle Hire</h3>
+          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Well-maintained fleet available for hire, suitable for corporate and personal transportation needs.</p>
         </div>
 
         <!-- 6: Delivery -->
@@ -642,8 +645,8 @@
           <div class="card-icon">
             <i data-lucide="package" class="w-7 h-7"></i>
           </div>
-          <h3 class="font-display text-xl font-semibold text-sierra-cream mb-2">Delivery</h3>
-          <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">Swift and secure delivery services across Sierra Leone with real-time tracking and accountability.</p>
+          <h3 class="font-display text-2xl font-semibold text-sierra-charcoal mb-2">Delivery</h3>
+          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Swift and secure delivery services across Sierra Leone with real-time tracking and accountability.</p>
         </div>
 
         <!-- 7: Generator Servicing -->
@@ -652,8 +655,8 @@
           <div class="card-icon">
             <i data-lucide="zap" class="w-7 h-7"></i>
           </div>
-          <h3 class="font-display text-xl font-semibold text-sierra-cream mb-2">Generator Servicing</h3>
-          <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">Expert maintenance and repair services to keep your power systems running at peak performance.</p>
+          <h3 class="font-display text-2xl font-semibold text-sierra-charcoal mb-2">Generator Servicing</h3>
+          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Expert maintenance and repair services to keep your power systems running at peak performance.</p>
         </div>
 
         <!-- 8: Cleaning -->
@@ -662,8 +665,8 @@
           <div class="card-icon">
             <i data-lucide="sparkles" class="w-7 h-7"></i>
           </div>
-          <h3 class="font-display text-xl font-semibold text-sierra-cream mb-2">Cleaning Services</h3>
-          <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">Professional cleaning solutions for commercial and residential properties to the highest standards.</p>
+          <h3 class="font-display text-2xl font-semibold text-sierra-charcoal mb-2">Cleaning Services</h3>
+          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Professional cleaning solutions for commercial and residential properties to the highest standards.</p>
         </div>
       </div>
     </div>
@@ -677,55 +680,55 @@
         <!-- Left -->
         <div>
           <span class="reveal-left font-body text-xs uppercase tracking-[0.3em] text-sierra-gold mb-4 block">Why Choose Us</span>
-          <h2 class="reveal-left font-display text-[clamp(2rem,5vw,4rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-sierra-cream mb-8">
+          <h2 class="reveal-left font-display text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-sierra-charcoal mb-8">
             Built on<br>
             <span class="text-gradient" style="font-style: italic;">Trust &amp; Excellence</span>
           </h2>
           <div class="reveal-left gold-rule w-16 mb-8"></div>
-          <p class="reveal-left font-body text-sierra-mist/70 leading-[1.8]">
+          <p class="reveal-left font-body text-sierra-slate/80 leading-[1.8]">
             In a landscape where security and reliability are paramount, Sierra 24/7 stands apart through our dedication to professionalism, our rigorous training standards, and our genuine care for each client's unique needs.
           </p>
         </div>
 
         <!-- Right — Features -->
         <div class="space-y-6">
-          <div class="reveal-right flex gap-5 p-6 border border-white/[0.04] bg-sierra-charcoal/20 hover:border-sierra-gold/20 transition-colors duration-500">
+          <div class="reveal-right flex gap-5 p-6 border border-black/[0.06] bg-white hover:border-sierra-gold/20 transition-colors duration-500">
             <div class="shrink-0 w-12 h-12 rounded-full border border-sierra-gold/20 flex items-center justify-center">
               <i data-lucide="clock" class="w-5 h-5 text-sierra-gold"></i>
             </div>
             <div>
-              <h3 class="font-display text-lg font-semibold text-sierra-cream mb-1">24/7 Availability</h3>
-              <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">Round-the-clock service every day of the week. Your security never sleeps, and neither do we.</p>
+              <h3 class="font-display text-xl font-semibold text-sierra-charcoal mb-1">24/7 Availability</h3>
+              <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Round-the-clock service every day of the week. Your security never sleeps, and neither do we.</p>
             </div>
           </div>
 
-          <div class="reveal-right flex gap-5 p-6 border border-white/[0.04] bg-sierra-charcoal/20 hover:border-sierra-gold/20 transition-colors duration-500">
+          <div class="reveal-right flex gap-5 p-6 border border-black/[0.06] bg-white hover:border-sierra-gold/20 transition-colors duration-500">
             <div class="shrink-0 w-12 h-12 rounded-full border border-sierra-gold/20 flex items-center justify-center">
               <i data-lucide="users" class="w-5 h-5 text-sierra-gold"></i>
             </div>
             <div>
-              <h3 class="font-display text-lg font-semibold text-sierra-cream mb-1">Trained Professionals</h3>
-              <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">Every guard undergoes rigorous training to deliver the highest standard of professional security.</p>
+              <h3 class="font-display text-xl font-semibold text-sierra-charcoal mb-1">Trained Professionals</h3>
+              <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Every guard undergoes rigorous training to deliver the highest standard of professional security.</p>
             </div>
           </div>
 
-          <div class="reveal-right flex gap-5 p-6 border border-white/[0.04] bg-sierra-charcoal/20 hover:border-sierra-gold/20 transition-colors duration-500">
+          <div class="reveal-right flex gap-5 p-6 border border-black/[0.06] bg-white hover:border-sierra-gold/20 transition-colors duration-500">
             <div class="shrink-0 w-12 h-12 rounded-full border border-sierra-gold/20 flex items-center justify-center">
               <i data-lucide="layers" class="w-5 h-5 text-sierra-gold"></i>
             </div>
             <div>
-              <h3 class="font-display text-lg font-semibold text-sierra-cream mb-1">Multi-Service Expertise</h3>
-              <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">From security to construction, logistics to cleaning — one partner for all your operational needs.</p>
+              <h3 class="font-display text-xl font-semibold text-sierra-charcoal mb-1">Multi-Service Expertise</h3>
+              <p class="font-body text-base text-sierra-slate/70 leading-relaxed">From security to construction, logistics to cleaning — one partner for all your operational needs.</p>
             </div>
           </div>
 
-          <div class="reveal-right flex gap-5 p-6 border border-white/[0.04] bg-sierra-charcoal/20 hover:border-sierra-gold/20 transition-colors duration-500">
+          <div class="reveal-right flex gap-5 p-6 border border-black/[0.06] bg-white hover:border-sierra-gold/20 transition-colors duration-500">
             <div class="shrink-0 w-12 h-12 rounded-full border border-sierra-gold/20 flex items-center justify-center">
               <i data-lucide="map-pin" class="w-5 h-5 text-sierra-gold"></i>
             </div>
             <div>
-              <h3 class="font-display text-lg font-semibold text-sierra-cream mb-1">Local Knowledge</h3>
-              <p class="font-body text-sm text-sierra-mist/60 leading-relaxed">Deep roots in Freetown with an intimate understanding of the local security and business landscape.</p>
+              <h3 class="font-display text-xl font-semibold text-sierra-charcoal mb-1">Local Knowledge</h3>
+              <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Deep roots in Freetown with an intimate understanding of the local security and business landscape.</p>
             </div>
           </div>
         </div>
@@ -736,12 +739,12 @@
 
   <!-- ═══════════ CONTACT ═══════════ -->
   <section id="contact" class="py-32 md:py-40 px-6 relative">
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-sierra-charcoal/20 to-transparent pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-sierra-gold/[0.03] to-transparent pointer-events-none"></div>
 
     <div class="relative max-w-6xl mx-auto">
       <div class="text-center mb-20">
         <span class="reveal font-body text-xs uppercase tracking-[0.3em] text-sierra-gold mb-4 block">Get in Touch</span>
-        <h2 class="reveal font-display text-[clamp(2rem,5vw,4rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-sierra-cream">
+        <h2 class="reveal font-display text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-sierra-charcoal">
           Let's Talk<br>
           <span class="text-gradient" style="font-style: italic;">Security</span>
         </h2>
@@ -749,39 +752,39 @@
 
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Email -->
-        <div class="reveal-scale text-center p-10 border border-white/[0.04] bg-sierra-charcoal/30 backdrop-blur-sm hover:border-sierra-gold/20 transition-all duration-500">
+        <div class="reveal-scale text-center p-10 border border-black/[0.06] bg-white backdrop-blur-sm hover:border-sierra-gold/20 transition-all duration-500">
           <div class="w-14 h-14 rounded-full border border-sierra-gold/20 flex items-center justify-center mx-auto mb-5">
             <i data-lucide="mail" class="w-6 h-6 text-sierra-gold"></i>
           </div>
-          <h3 class="font-display text-lg font-semibold text-sierra-cream mb-2">Email</h3>
-          <a href="mailto:Sierra247securicor@gmail.com" class="font-body text-sm text-sierra-mist/70 hover:text-sierra-gold transition-colors duration-300 break-all">Sierra247securicor<wbr>@gmail.com</a>
+          <h3 class="font-display text-xl font-semibold text-sierra-charcoal mb-2">Email</h3>
+          <a href="mailto:Sierra247securicor@gmail.com" class="font-body text-sm text-sierra-slate/80 hover:text-sierra-gold transition-colors duration-300 break-all">Sierra247securicor<wbr>@gmail.com</a>
         </div>
 
         <!-- Phone -->
-        <div class="reveal-scale text-center p-10 border border-white/[0.04] bg-sierra-charcoal/30 backdrop-blur-sm hover:border-sierra-gold/20 transition-all duration-500">
+        <div class="reveal-scale text-center p-10 border border-black/[0.06] bg-white backdrop-blur-sm hover:border-sierra-gold/20 transition-all duration-500">
           <div class="w-14 h-14 rounded-full border border-sierra-gold/20 flex items-center justify-center mx-auto mb-5">
             <i data-lucide="phone" class="w-6 h-6 text-sierra-gold"></i>
           </div>
-          <h3 class="font-display text-lg font-semibold text-sierra-cream mb-2">Phone</h3>
-          <a href="tel:+23279611138" class="font-body text-sm text-sierra-mist/70 hover:text-sierra-gold transition-colors duration-300">079 611 138</a>
+          <h3 class="font-display text-xl font-semibold text-sierra-charcoal mb-2">Phone</h3>
+          <a href="tel:+23279611138" class="font-body text-sm text-sierra-slate/80 hover:text-sierra-gold transition-colors duration-300">079 611 138</a>
         </div>
 
         <!-- Address -->
-        <div class="reveal-scale text-center p-10 border border-white/[0.04] bg-sierra-charcoal/30 backdrop-blur-sm hover:border-sierra-gold/20 transition-all duration-500">
+        <div class="reveal-scale text-center p-10 border border-black/[0.06] bg-white backdrop-blur-sm hover:border-sierra-gold/20 transition-all duration-500">
           <div class="w-14 h-14 rounded-full border border-sierra-gold/20 flex items-center justify-center mx-auto mb-5">
             <i data-lucide="map-pin" class="w-6 h-6 text-sierra-gold"></i>
           </div>
-          <h3 class="font-display text-lg font-semibold text-sierra-cream mb-2">Visit Us</h3>
-          <p class="font-body text-sm text-sierra-mist/70">66 Sander Street,<br>Freetown, Sierra Leone</p>
+          <h3 class="font-display text-xl font-semibold text-sierra-charcoal mb-2">Visit Us</h3>
+          <p class="font-body text-sm text-sierra-slate/80">66 Sander Street,<br>Freetown, Sierra Leone</p>
         </div>
       </div>
 
       <!-- Hours -->
       <div class="reveal mt-12 text-center">
-        <div class="inline-flex items-center gap-3 px-6 py-3 border border-white/[0.04] bg-sierra-charcoal/30 rounded-full">
+        <div class="inline-flex items-center gap-3 px-6 py-3 border border-black/[0.06] bg-white rounded-full">
           <div class="glow-dot"></div>
-          <span class="font-body text-sm text-sierra-mist/70">
-            <span class="text-sierra-cream font-medium">Open Now</span> &mdash; Mon – Sun, 7:30 AM – 7:30 PM
+          <span class="font-body text-sm text-sierra-slate/80">
+            <span class="text-sierra-charcoal font-medium">Open Now</span> &mdash; Mon – Sun, 7:30 AM – 7:30 PM
           </span>
         </div>
       </div>
@@ -809,13 +812,13 @@
 
 
   <!-- ═══════════ FOOTER ═══════════ -->
-  <footer class="border-t border-white/[0.04] py-16 px-6">
+  <footer class="border-t border-black/[0.06] py-16 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="grid md:grid-cols-3 gap-12 md:gap-8 items-start mb-12">
         <!-- Brand -->
         <div>
-          <img src="sierra-logo.png" alt="Sierra 24/7 Logo" class="h-12 w-auto mb-4" />
-          <p class="font-body text-sm text-sierra-mist/50 leading-relaxed max-w-xs">
+          <img src="sierra-logo.png" alt="Sierra 24/7 Logo" class="h-20 w-auto mb-4" />
+          <p class="font-body text-base text-sierra-slate/50 leading-relaxed max-w-xs">
             Professional security and multi-service solutions in Freetown, Sierra Leone. Your safety is our commitment.
           </p>
         </div>
@@ -823,26 +826,26 @@
         <!-- Links -->
         <div class="flex flex-col gap-3">
           <span class="font-body text-xs uppercase tracking-[0.2em] text-sierra-gold mb-2">Quick Links</span>
-          <a href="#about" class="font-body text-sm text-sierra-mist/50 hover:text-sierra-gold transition-colors duration-300">About Us</a>
-          <a href="#services" class="font-body text-sm text-sierra-mist/50 hover:text-sierra-gold transition-colors duration-300">Our Services</a>
-          <a href="#why" class="font-body text-sm text-sierra-mist/50 hover:text-sierra-gold transition-colors duration-300">Why Choose Us</a>
-          <a href="#contact" class="font-body text-sm text-sierra-mist/50 hover:text-sierra-gold transition-colors duration-300">Contact</a>
+          <a href="#about" class="font-body text-base text-sierra-slate/50 hover:text-sierra-gold transition-colors duration-300">About Us</a>
+          <a href="#services" class="font-body text-base text-sierra-slate/50 hover:text-sierra-gold transition-colors duration-300">Our Services</a>
+          <a href="#why" class="font-body text-base text-sierra-slate/50 hover:text-sierra-gold transition-colors duration-300">Why Choose Us</a>
+          <a href="#contact" class="font-body text-base text-sierra-slate/50 hover:text-sierra-gold transition-colors duration-300">Contact</a>
         </div>
 
         <!-- Contact -->
         <div class="flex flex-col gap-3">
           <span class="font-body text-xs uppercase tracking-[0.2em] text-sierra-gold mb-2">Contact</span>
-          <a href="mailto:Sierra247securicor@gmail.com" class="font-body text-sm text-sierra-mist/50 hover:text-sierra-gold transition-colors duration-300">Sierra247securicor@gmail.com</a>
-          <a href="tel:+23279611138" class="font-body text-sm text-sierra-mist/50 hover:text-sierra-gold transition-colors duration-300">079 611 138</a>
-          <p class="font-body text-sm text-sierra-mist/50">66 Sander Street, Freetown</p>
+          <a href="mailto:Sierra247securicor@gmail.com" class="font-body text-base text-sierra-slate/50 hover:text-sierra-gold transition-colors duration-300">Sierra247securicor@gmail.com</a>
+          <a href="tel:+23279611138" class="font-body text-base text-sierra-slate/50 hover:text-sierra-gold transition-colors duration-300">079 611 138</a>
+          <p class="font-body text-base text-sierra-slate/50">66 Sander Street, Freetown</p>
         </div>
       </div>
 
       <div class="gold-rule w-full mb-8"></div>
 
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <p class="font-body text-xs text-sierra-mist/30">&copy; <span id="footerYear"></span> Sierra 24/7 Securicor and Logistics Services SL Ltd. All rights reserved.</p>
-        <p class="font-body text-xs text-sierra-mist/30">Designed with precision in Freetown</p>
+        <p class="font-body text-xs text-sierra-slate/30">&copy; <span id="footerYear"></span> Sierra 24/7 Securicor and Logistics Services SL Ltd. All rights reserved.</p>
+        <p class="font-body text-xs text-sierra-slate/30">Designed with precision in Freetown</p>
       </div>
     </div>
   </footer>
