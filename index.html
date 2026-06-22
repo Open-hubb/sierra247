@@ -414,24 +414,27 @@
 <body class="grain">
 
   <!-- ═══════════ NAVIGATION ═══════════ -->
-  <nav class="nav-float fixed top-4 left-1/2 -translate-x-1/2 z-50 px-6 py-3 rounded-full flex items-center gap-8" id="navbar">
-    <a href="#hero" class="flex items-center gap-2 shrink-0">
+  <div class="fixed top-4 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-10" id="navWrapper" style="transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;"
+    <!-- Logo — outside island, far left -->
+    <a href="#hero" class="flex items-center shrink-0">
       <img src="sierra-logo.png" alt="Sierra 24/7 Logo" class="h-24 w-auto" />
     </a>
 
-    <div class="hidden md:flex items-center gap-8">
+    <!-- Island nav — center -->
+    <nav class="nav-float hidden md:flex items-center gap-8 px-8 py-3 rounded-full" id="navbar">
       <a href="#about" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-gold transition-colors duration-300">About</a>
       <a href="#services" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-gold transition-colors duration-300">Services</a>
       <a href="#why" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-gold transition-colors duration-300">Why Us</a>
       <a href="#contact" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-gold transition-colors duration-300">Contact</a>
-    </div>
+    </nav>
 
+    <!-- Pay Now — outside island, far right -->
     <button onclick="openFlot()" class="hidden md:inline-flex mag-btn mag-btn-fill text-xs py-2 px-5 rounded-full border-0">Pay Now</button>
 
     <div class="hamburger md:hidden" id="menuToggle" aria-label="Toggle menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
     </div>
-  </nav>
+  </div>
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
@@ -484,11 +487,6 @@
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal">
-      <span class="font-body text-[10px] uppercase tracking-[0.3em] text-sierra-slate/40">Scroll</span>
-      <div class="w-px h-12 bg-gradient-to-b from-sierra-gold/40 to-transparent scroll-line"></div>
-    </div>
   </section>
 
 
@@ -911,7 +909,7 @@
     });
 
     // ──── Navbar hide/show on scroll ────
-    const navbar = document.getElementById('navbar');
+    const navWrapper = document.getElementById('navWrapper');
     let lastScroll = 0;
     let ticking = false;
 
@@ -920,9 +918,11 @@
         window.requestAnimationFrame(() => {
           const currentScroll = window.scrollY;
           if (currentScroll > lastScroll && currentScroll > 200) {
-            navbar.classList.add('hidden-nav');
+            navWrapper.style.transform = 'translateY(-120%)';
+            navWrapper.style.opacity = '0';
           } else {
-            navbar.classList.remove('hidden-nav');
+            navWrapper.style.transform = 'translateY(0)';
+            navWrapper.style.opacity = '1';
           }
           lastScroll = currentScroll;
           ticking = false;
@@ -942,17 +942,6 @@
       stagger: 0.15,
       ease: 'power4.out',
       delay: 0.3,
-    });
-
-    // Scroll line pulse
-    gsap.to('.scroll-line', {
-      scaleY: 0.5,
-      opacity: 0.3,
-      duration: 1.5,
-      ease: 'power2.inOut',
-      repeat: -1,
-      yoyo: true,
-      transformOrigin: 'top',
     });
 
     // Reveal animations
