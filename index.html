@@ -617,30 +617,32 @@
 
   <!-- ═══════════ HERO ═══════════ -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <!-- Background elements -->
-    <div class="hero-radial top-1/4 -right-40 opacity-60"></div>
-    <div class="hero-radial-green bottom-0 -left-40 opacity-40"></div>
+    <!-- Hero background image -->
+    <div class="absolute inset-0 z-0">
+      <img src="hero-bg.jpg" alt="" class="w-full h-full object-cover" fetchpriority="high">
+      <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(15, 31, 61, 0.75) 0%, rgba(27, 51, 101, 0.65) 40%, rgba(15, 31, 61, 0.85) 100%);"></div>
+    </div>
 
     <!-- Subtle grid pattern -->
-    <div class="absolute inset-0 opacity-[0.02]" style="background-image: linear-gradient(rgba(27,51,101,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(27,51,101,0.3) 1px, transparent 1px); background-size: 80px 80px;"></div>
+    <div class="absolute inset-0 z-[1] opacity-[0.04]" style="background-image: linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px); background-size: 80px 80px;"></div>
 
     <div class="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
       <!-- Eyebrow -->
       <div class="reveal flex items-center justify-center gap-3 mb-8">
         <div class="glow-dot"></div>
-        <span class="font-body text-xs uppercase tracking-[0.3em] text-sierra-mist">Est. 2023 &mdash; Freetown, Sierra Leone</span>
+        <span class="font-body text-xs uppercase tracking-[0.3em] text-white/70">Est. 2023 &mdash; Freetown, Sierra Leone</span>
         <div class="glow-dot"></div>
       </div>
 
       <!-- Main headline -->
       <h1 class="font-display font-semibold leading-[0.9] tracking-[-0.03em] mb-8">
-        <span class="block text-[clamp(2.5rem,8vw,7rem)] text-sierra-navy-dark hero-title">Sierra</span>
-        <span class="block text-[clamp(3rem,10vw,9rem)] text-gradient hero-title" style="font-style: italic;">24/7</span>
-        <span class="block text-[clamp(1.2rem,3vw,2rem)] font-body font-light uppercase tracking-[0.35em] text-sierra-mist mt-4 hero-title">Securicor &amp; Logistics</span>
+        <span class="block text-[clamp(2.5rem,8vw,7rem)] text-white hero-title">Sierra</span>
+        <span class="block text-[clamp(3rem,10vw,9rem)] hero-title" style="font-style: italic; background: linear-gradient(135deg, #ffffff, #3DA63C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">24/7</span>
+        <span class="block text-[clamp(1.2rem,3vw,2rem)] font-body font-light uppercase tracking-[0.35em] text-white/60 mt-4 hero-title">Securicor &amp; Logistics</span>
       </h1>
 
       <!-- Tagline -->
-      <p class="reveal font-body text-xl md:text-2xl text-sierra-slate/70 max-w-xl mx-auto mb-10 leading-relaxed" style="line-height: 1.7;">
+      <p class="reveal font-body text-xl md:text-2xl text-white/70 max-w-xl mx-auto mb-10 leading-relaxed" style="line-height: 1.7;">
         Professional security services built on trust, vigilance, and an unwavering commitment to your safety.
       </p>
 
@@ -650,7 +652,7 @@
           Our Services
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 17 5-5-5-5"/><path d="m13 17 5-5-5-5"/></svg>
         </a>
-        <a href="#contact" class="mag-btn rounded-full">
+        <a href="#contact" class="mag-btn rounded-full" style="border-color: rgba(255,255,255,0.4); color: #fff;">
           Contact Us
         </a>
       </div>
