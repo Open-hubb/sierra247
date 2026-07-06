@@ -161,44 +161,120 @@
       background: linear-gradient(to right, #2B8C2A, #1B3365, transparent);
     }
 
-    /* Service card */
+    /* Services bento grid */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-auto-rows: minmax(240px, auto);
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .bento-grid { grid-template-columns: repeat(2, 1fr); }
+      .bento-security { grid-column: span 2; grid-row: span 2; }
+      .bento-logistics { grid-column: span 2; }
+      .bento-generator { grid-column: span 2; }
+      .bento-cleaning { grid-column: span 2; }
+    }
+
+    @media (min-width: 1024px) {
+      .bento-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 250px;
+      }
+      .bento-security  { grid-column: 1 / 3; grid-row: 1 / 3; }
+      .bento-logistics { grid-column: 3 / 5; grid-row: 1; }
+      .bento-procure   { grid-column: 3; grid-row: 2; }
+      .bento-construct { grid-column: 4; grid-row: 2; }
+      .bento-vehicle   { grid-column: 1; grid-row: 3; }
+      .bento-delivery  { grid-column: 2; grid-row: 3; }
+      .bento-cleaning  { grid-column: 3 / 5; grid-row: 3 / 5; }
+      .bento-generator { grid-column: 1 / 3; grid-row: 4; }
+    }
+
     .service-card {
       position: relative;
-      padding: 2.5rem 2rem;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      background: #FFFFFF;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-      transition: border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.75rem;
+      padding-top: 5.5rem;
+      min-height: 240px;
+      box-shadow: 0 4px 20px rgba(27, 51, 101, 0.12), 0 1px 4px rgba(0,0,0,0.08);
       cursor: default;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .service-card:hover {
-      border-color: rgba(27, 51, 101, 0.25);
-      background: #FFFFFF;
-      box-shadow: 0 8px 30px rgba(27, 51, 101, 0.1);
-      transform: translateY(-4px);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 44px rgba(27, 51, 101, 0.25), 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .service-card .card-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .service-card:hover .card-bg {
+      transform: scale(1.06);
+    }
+
+    .service-card .card-tint {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11, 22, 46, 0.92) 0%, rgba(11, 22, 46, 0.55) 45%, rgba(11, 22, 46, 0.15) 75%, rgba(11, 22, 46, 0.25) 100%);
+    }
+
+    .service-card .card-wash {
+      position: absolute;
+      inset: 0;
+      background: rgba(27, 51, 101, 0.28);
+      mix-blend-mode: multiply;
+    }
+
+    .service-card .card-content {
+      position: relative;
+      z-index: 1;
     }
 
     .service-card .card-number {
       font-family: 'Cormorant Garamond', serif;
       font-size: 3rem;
       font-weight: 300;
-      color: rgba(27, 51, 101, 0.1);
+      color: rgba(255, 255, 255, 0.35);
       line-height: 1;
       position: absolute;
       top: 1.25rem;
       right: 1.5rem;
+      z-index: 1;
       transition: color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .service-card:hover .card-number {
-      color: rgba(27, 51, 101, 0.2);
+      color: rgba(255, 255, 255, 0.6);
     }
 
     .service-card .card-icon {
-      color: #2B8C2A;
-      margin-bottom: 1.25rem;
+      position: absolute;
+      top: 1.5rem;
+      left: 1.75rem;
+      z-index: 1;
+      width: 2.75rem;
+      height: 2.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -439,8 +515,9 @@
     /* ── Responsive overrides ── */
     @media (max-width: 480px) {
       .mag-btn { padding: 0.75rem 1.5rem; font-size: 0.8rem; }
-      .service-card { padding: 1.75rem 1.25rem; }
+      .service-card { padding: 1.5rem 1.25rem; padding-top: 5rem; }
       .service-card .card-number { font-size: 2.25rem; }
+      .service-card .card-icon { top: 1.25rem; left: 1.25rem; }
     }
 
     @media (max-width: 768px) {
@@ -693,90 +770,130 @@
         </h2>
       </div>
 
-      <!-- Services grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- 1: Security -->
-        <div class="service-card reveal-scale">
+      <!-- Services bento grid -->
+      <div class="bento-grid">
+        <!-- 1: Security (featured 2x2) -->
+        <div class="service-card bento-security reveal-scale">
+          <img class="card-bg" src="slide-3.jpg" alt="" loading="lazy" decoding="async">
+          <div class="card-wash"></div>
+          <div class="card-tint"></div>
           <span class="card-number">01</span>
           <div class="card-icon">
-            <i data-lucide="shield-check" class="w-7 h-7"></i>
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-sierra-navy-dark mb-2">Security Services</h3>
-          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Professional security guards trained to protect your assets, premises, and personnel.</p>
-          <div class="mt-4 pt-3 border-t border-black/[0.06]">
-            <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-slate/40">Starting from</span>
-            <p class="font-display text-2xl font-semibold text-sierra-green mt-1">SLE 3,500<span class="text-sm font-body font-normal text-sierra-slate/40 ml-1">& upwards</span></p>
+          <div class="card-content">
+            <h3 class="font-display text-3xl font-semibold text-white mb-2">Security Services</h3>
+            <p class="font-body text-base text-white/75 leading-relaxed max-w-md">Professional security guards trained to protect your assets, premises, and personnel.</p>
+            <div class="mt-4 pt-3 border-t border-white/15">
+              <span class="font-body text-xs uppercase tracking-[0.15em] text-white/50">Starting from</span>
+              <p class="font-display text-2xl font-semibold text-sierra-green-light mt-1">SLE 3,500<span class="text-sm font-body font-normal text-white/50 ml-1">& upwards</span></p>
+            </div>
           </div>
         </div>
 
-        <!-- 2: Logistics -->
-        <div class="service-card reveal-scale">
+        <!-- 2: Logistics (wide) -->
+        <div class="service-card bento-logistics reveal-scale">
+          <img class="card-bg" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" decoding="async">
+          <div class="card-wash"></div>
+          <div class="card-tint"></div>
           <span class="card-number">02</span>
           <div class="card-icon">
-            <i data-lucide="truck" class="w-7 h-7"></i>
+            <i data-lucide="truck" class="w-6 h-6"></i>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-sierra-navy-dark mb-2">Logistics</h3>
-          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">End-to-end logistics management ensuring your goods reach their destination safely and on time.</p>
+          <div class="card-content">
+            <h3 class="font-display text-2xl font-semibold text-white mb-1">Logistics</h3>
+            <p class="font-body text-sm text-white/75 leading-relaxed max-w-md">End-to-end logistics management ensuring your goods reach their destination safely and on time.</p>
+          </div>
         </div>
 
         <!-- 3: Procurement -->
-        <div class="service-card reveal-scale">
+        <div class="service-card bento-procure reveal-scale">
+          <img class="card-bg" src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy" decoding="async">
+          <div class="card-wash"></div>
+          <div class="card-tint"></div>
           <span class="card-number">03</span>
           <div class="card-icon">
-            <i data-lucide="package-search" class="w-7 h-7"></i>
+            <i data-lucide="package-search" class="w-6 h-6"></i>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-sierra-navy-dark mb-2">Procurement</h3>
-          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Strategic sourcing and procurement services to optimize your supply chain operations.</p>
+          <div class="card-content">
+            <h3 class="font-display text-2xl font-semibold text-white mb-1">Procurement</h3>
+            <p class="font-body text-sm text-white/75 leading-relaxed">Strategic sourcing to optimize your supply chain operations.</p>
+          </div>
         </div>
 
         <!-- 4: Construction -->
-        <div class="service-card reveal-scale">
+        <div class="service-card bento-construct reveal-scale">
+          <img class="card-bg" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy" decoding="async">
+          <div class="card-wash"></div>
+          <div class="card-tint"></div>
           <span class="card-number">04</span>
           <div class="card-icon">
-            <i data-lucide="hard-hat" class="w-7 h-7"></i>
+            <i data-lucide="hard-hat" class="w-6 h-6"></i>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-sierra-navy-dark mb-2">Construction</h3>
-          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Reliable construction services delivered with precision, quality, and adherence to timelines.</p>
+          <div class="card-content">
+            <h3 class="font-display text-2xl font-semibold text-white mb-1">Construction</h3>
+            <p class="font-body text-sm text-white/75 leading-relaxed">Reliable construction delivered with precision and quality.</p>
+          </div>
         </div>
 
         <!-- 5: Vehicle Hire -->
-        <div class="service-card reveal-scale">
+        <div class="service-card bento-vehicle reveal-scale">
+          <img class="card-bg" src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy" decoding="async">
+          <div class="card-wash"></div>
+          <div class="card-tint"></div>
           <span class="card-number">05</span>
           <div class="card-icon">
-            <i data-lucide="car" class="w-7 h-7"></i>
+            <i data-lucide="car" class="w-6 h-6"></i>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-sierra-navy-dark mb-2">Vehicle Hire</h3>
-          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Well-maintained fleet available for hire, suitable for corporate and personal transportation needs.</p>
+          <div class="card-content">
+            <h3 class="font-display text-2xl font-semibold text-white mb-1">Vehicle Hire</h3>
+            <p class="font-body text-sm text-white/75 leading-relaxed">Well-maintained fleet for corporate and personal needs.</p>
+          </div>
         </div>
 
         <!-- 6: Delivery -->
-        <div class="service-card reveal-scale">
+        <div class="service-card bento-delivery reveal-scale">
+          <img class="card-bg" src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy" decoding="async">
+          <div class="card-wash"></div>
+          <div class="card-tint"></div>
           <span class="card-number">06</span>
           <div class="card-icon">
-            <i data-lucide="package" class="w-7 h-7"></i>
+            <i data-lucide="package" class="w-6 h-6"></i>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-sierra-navy-dark mb-2">Delivery</h3>
-          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Swift and secure delivery services across Sierra Leone with real-time tracking and accountability.</p>
+          <div class="card-content">
+            <h3 class="font-display text-2xl font-semibold text-white mb-1">Delivery</h3>
+            <p class="font-body text-sm text-white/75 leading-relaxed">Swift, secure delivery across Sierra Leone with real-time tracking.</p>
+          </div>
         </div>
 
-        <!-- 7: Generator Servicing -->
-        <div class="service-card reveal-scale">
-          <span class="card-number">07</span>
-          <div class="card-icon">
-            <i data-lucide="zap" class="w-7 h-7"></i>
-          </div>
-          <h3 class="font-display text-2xl font-semibold text-sierra-navy-dark mb-2">Generator Servicing</h3>
-          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Expert maintenance and repair services to keep your power systems running at peak performance.</p>
-        </div>
-
-        <!-- 8: Cleaning -->
-        <div class="service-card reveal-scale">
+        <!-- 7: Cleaning (featured 2x2) -->
+        <div class="service-card bento-cleaning reveal-scale">
+          <img class="card-bg" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" decoding="async">
+          <div class="card-wash"></div>
+          <div class="card-tint"></div>
           <span class="card-number">08</span>
           <div class="card-icon">
-            <i data-lucide="sparkles" class="w-7 h-7"></i>
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
           </div>
-          <h3 class="font-display text-2xl font-semibold text-sierra-navy-dark mb-2">Cleaning Services</h3>
-          <p class="font-body text-base text-sierra-slate/70 leading-relaxed">Professional cleaning solutions for commercial and residential properties to the highest standards.</p>
+          <div class="card-content">
+            <h3 class="font-display text-3xl font-semibold text-white mb-2">Cleaning Services</h3>
+            <p class="font-body text-base text-white/75 leading-relaxed max-w-md">Professional cleaning solutions for commercial and residential properties to the highest standards.</p>
+          </div>
+        </div>
+
+        <!-- 8: Generator Servicing (wide) -->
+        <div class="service-card bento-generator reveal-scale">
+          <img class="card-bg" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" decoding="async">
+          <div class="card-wash"></div>
+          <div class="card-tint"></div>
+          <span class="card-number">07</span>
+          <div class="card-icon">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <div class="card-content">
+            <h3 class="font-display text-2xl font-semibold text-white mb-1">Generator Servicing</h3>
+            <p class="font-body text-sm text-white/75 leading-relaxed max-w-md">Expert maintenance and repair to keep your power systems running at peak performance.</p>
+          </div>
         </div>
       </div>
     </div>
