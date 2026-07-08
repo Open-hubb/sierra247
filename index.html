@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sierra 24/7 — Securicor & Logistics</title>
-  <meta name="description" content="Sierra 24/7 Securicor and Logistics Services SL Ltd — Professional security guards, logistics, procurement, construction, and more in Freetown, Sierra Leone.">
+  <title>Sierra 24/7 | Securicor & Logistics</title>
+  <meta name="description" content="Sierra 24/7 Securicor and Logistics Services SL Ltd. Professional security guards, logistics, procurement, construction, and more in Freetown, Sierra Leone.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,7 +70,7 @@
       color: #FFFFFF;
     }
 
-    /* Grain overlay — hidden on low-power devices */
+    /* Grain overlay (hidden on low-power devices) */
     .grain::before {
       content: '';
       position: fixed;
@@ -173,8 +173,9 @@
       .bento-grid { grid-template-columns: repeat(2, 1fr); }
       .bento-security { grid-column: span 2; grid-row: span 2; }
       .bento-logistics { grid-column: span 2; }
+      .bento-cctv { grid-column: span 2; }
+      .bento-cleaning { grid-column: span 2; grid-row: span 2; }
       .bento-generator { grid-column: span 2; }
-      .bento-cleaning { grid-column: span 2; }
     }
 
     @media (min-width: 1024px) {
@@ -186,11 +187,107 @@
       .bento-logistics { grid-column: 3 / 5; grid-row: 1; }
       .bento-procure   { grid-column: 3; grid-row: 2; }
       .bento-construct { grid-column: 4; grid-row: 2; }
-      .bento-vehicle   { grid-column: 1; grid-row: 3; }
-      .bento-delivery  { grid-column: 2; grid-row: 3; }
-      .bento-cleaning  { grid-column: 3 / 5; grid-row: 3 / 5; }
-      .bento-generator { grid-column: 1 / 3; grid-row: 4; }
+      .bento-cctv      { grid-column: 1 / 3; grid-row: 3; }
+      .bento-vehicle   { grid-column: 3; grid-row: 3; }
+      .bento-delivery  { grid-column: 4; grid-row: 3; }
+      .bento-fuel      { grid-column: 1; grid-row: 4; }
+      .bento-grilles   { grid-column: 2; grid-row: 4; }
+      .bento-cleaning  { grid-column: 3 / 5; grid-row: 4 / 6; }
+      .bento-generator { grid-column: 1 / 3; grid-row: 5; }
     }
+
+    /* Client cards */
+    .client-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
+      padding: 1.5rem 1.5rem 1.75rem;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: #FFFFFF;
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      transition: border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .client-card:hover {
+      border-color: rgba(27, 51, 101, 0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(27, 51, 101, 0.1);
+    }
+
+    .client-icon {
+      width: 2.75rem;
+      height: 2.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      color: #2B8C2A;
+      background: rgba(43, 140, 42, 0.08);
+      margin-bottom: 0.5rem;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .client-card:hover .client-icon { transform: scale(1.1); }
+
+    /* Career form */
+    .career-label {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 0.5rem;
+    }
+
+    .career-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .career-input::placeholder { color: rgba(255, 255, 255, 0.3); }
+
+    .career-input:focus {
+      border-color: #3DA63C;
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    select.career-input { appearance: none; -webkit-appearance: none; cursor: pointer; }
+    select.career-input option { color: #1A1A1A; }
+
+    .career-file {
+      width: 100%;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .career-file::file-selector-button {
+      margin-right: 1rem;
+      padding: 0.6rem 1.1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #FFFFFF;
+      background: #2B8C2A;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .career-file::file-selector-button:hover { background: #1E6B1D; }
 
     .service-card {
       position: relative;
@@ -600,24 +697,26 @@
 
   <!-- ═══════════ NAVIGATION ═══════════ -->
   <div class="fixed top-2 sm:top-4 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-10" id="navWrapper" style="transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;">
-    <!-- Logo — outside island, far left -->
+    <!-- Logo: outside island, far left -->
     <a href="#hero" class="flex items-center shrink-0">
       <img src="sierra-logo.png" alt="Sierra 24/7 Logo" class="h-14 sm:h-18 md:h-24 w-auto" fetchpriority="high" />
     </a>
 
-    <!-- Island nav — center -->
-    <nav class="nav-float hidden md:flex items-center gap-8 px-8 py-3 rounded-full" id="navbar">
+    <!-- Island nav: center -->
+    <nav class="nav-float hidden lg:flex items-center gap-6 px-7 py-3 rounded-full" id="navbar">
       <a href="#about" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-navy transition-colors duration-300">About</a>
       <a href="#services" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-navy transition-colors duration-300">Services</a>
       <a href="#gallery" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-navy transition-colors duration-300">Gallery</a>
+      <a href="#clients" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-navy transition-colors duration-300">Clients</a>
+      <a href="#careers" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-navy transition-colors duration-300">Careers</a>
       <a href="#why" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-navy transition-colors duration-300">Why Us</a>
       <a href="#contact" class="font-body text-xs uppercase tracking-[0.2em] text-sierra-slate hover:text-sierra-navy transition-colors duration-300">Contact</a>
     </nav>
 
-    <!-- Pay Now — outside island, far right -->
-    <button onclick="openFlot()" class="hidden md:inline-flex mag-btn mag-btn-fill text-xs py-2 px-5 rounded-full border-0">Pay Now</button>
+    <!-- Pay Now: outside island, far right -->
+    <button onclick="openFlot()" class="hidden lg:inline-flex mag-btn mag-btn-fill text-xs py-2 px-5 rounded-full border-0">Pay Now</button>
 
-    <div class="hamburger md:hidden" id="menuToggle" aria-label="Toggle menu" role="button" tabindex="0">
+    <div class="hamburger lg:hidden" id="menuToggle" aria-label="Toggle menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
     </div>
   </div>
@@ -627,6 +726,8 @@
     <a href="#about" class="mobile-link">About</a>
     <a href="#services" class="mobile-link">Services</a>
     <a href="#gallery" class="mobile-link">Gallery</a>
+    <a href="#clients" class="mobile-link">Clients</a>
+    <a href="#careers" class="mobile-link">Careers</a>
     <a href="#why" class="mobile-link">Why Us</a>
     <a href="#contact" class="mobile-link">Contact</a>
     <button onclick="openFlot(); menuToggle.click();" class="mag-btn mag-btn-fill mt-4 rounded-full">Pay Now</button>
@@ -648,7 +749,7 @@
       <!-- Eyebrow -->
       <div class="reveal flex items-center justify-center gap-3 mb-8">
         <div class="glow-dot"></div>
-        <span class="font-body text-xs uppercase tracking-[0.3em] text-white/70">Est. 2023 &mdash; Freetown, Sierra Leone</span>
+        <span class="font-body text-xs uppercase tracking-[0.3em] text-white/70">Est. 2023 &middot; Freetown, Sierra Leone</span>
         <div class="glow-dot"></div>
       </div>
 
@@ -726,7 +827,7 @@
           </p>
         </div>
 
-        <!-- Right — Stats -->
+        <!-- Right: Stats -->
         <div class="reveal-right space-y-8">
           <div class="p-8 border border-black/[0.06] bg-white backdrop-blur-sm">
             <div class="flex items-end gap-2 mb-3">
@@ -836,12 +937,27 @@
           </div>
         </div>
 
-        <!-- 5: Vehicle Hire -->
+        <!-- 5: CCTV Installation (wide) -->
+        <div class="service-card bento-cctv reveal-scale">
+          <img class="card-bg" src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" decoding="async">
+          <div class="card-wash"></div>
+          <div class="card-tint"></div>
+          <span class="card-number">05</span>
+          <div class="card-icon">
+            <i data-lucide="cctv" class="w-6 h-6"></i>
+          </div>
+          <div class="card-content">
+            <h3 class="font-display text-2xl font-semibold text-white mb-1">CCTV Installation</h3>
+            <p class="font-body text-sm text-white/75 leading-relaxed max-w-md">Professional CCTV camera supply and installation for round-the-clock surveillance of your premises.</p>
+          </div>
+        </div>
+
+        <!-- 6: Vehicle Hire -->
         <div class="service-card bento-vehicle reveal-scale">
           <img class="card-bg" src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy" decoding="async">
           <div class="card-wash"></div>
           <div class="card-tint"></div>
-          <span class="card-number">05</span>
+          <span class="card-number">06</span>
           <div class="card-icon">
             <i data-lucide="car" class="w-6 h-6"></i>
           </div>
@@ -851,12 +967,12 @@
           </div>
         </div>
 
-        <!-- 6: Delivery -->
+        <!-- 7: Delivery -->
         <div class="service-card bento-delivery reveal-scale">
           <img class="card-bg" src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy" decoding="async">
           <div class="card-wash"></div>
           <div class="card-tint"></div>
-          <span class="card-number">06</span>
+          <span class="card-number">07</span>
           <div class="card-icon">
             <i data-lucide="package" class="w-6 h-6"></i>
           </div>
@@ -866,12 +982,42 @@
           </div>
         </div>
 
-        <!-- 7: Cleaning (featured 2x2) -->
+        <!-- 8: Fuel Delivery -->
+        <div class="service-card bento-fuel reveal-scale">
+          <img class="card-bg" src="https://images.unsplash.com/photo-1527018601619-a508a2be00cd?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy" decoding="async">
+          <div class="card-wash"></div>
+          <div class="card-tint"></div>
+          <span class="card-number">08</span>
+          <div class="card-icon">
+            <i data-lucide="fuel" class="w-6 h-6"></i>
+          </div>
+          <div class="card-content">
+            <h3 class="font-display text-2xl font-semibold text-white mb-1">Fuel Delivery</h3>
+            <p class="font-body text-sm text-white/75 leading-relaxed">Reliable fuel supply delivered directly to your site.</p>
+          </div>
+        </div>
+
+        <!-- 9: Security Grilles -->
+        <div class="service-card bento-grilles reveal-scale">
+          <img class="card-bg" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=700&q=70" alt="" loading="lazy" decoding="async">
+          <div class="card-wash"></div>
+          <div class="card-tint"></div>
+          <span class="card-number">09</span>
+          <div class="card-icon">
+            <i data-lucide="grid-2x2" class="w-6 h-6"></i>
+          </div>
+          <div class="card-content">
+            <h3 class="font-display text-2xl font-semibold text-white mb-1">Security Grilles</h3>
+            <p class="font-body text-sm text-white/75 leading-relaxed">Custom window grilles fabricated and fitted for offices and residences.</p>
+          </div>
+        </div>
+
+        <!-- 10: Cleaning (featured 2x2) -->
         <div class="service-card bento-cleaning reveal-scale">
           <img class="card-bg" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" decoding="async">
           <div class="card-wash"></div>
           <div class="card-tint"></div>
-          <span class="card-number">08</span>
+          <span class="card-number">10</span>
           <div class="card-icon">
             <i data-lucide="sparkles" class="w-6 h-6"></i>
           </div>
@@ -881,12 +1027,12 @@
           </div>
         </div>
 
-        <!-- 8: Generator Servicing (wide) -->
+        <!-- 11: Generator Servicing (wide) -->
         <div class="service-card bento-generator reveal-scale">
           <img class="card-bg" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=70" alt="" loading="lazy" decoding="async">
           <div class="card-wash"></div>
           <div class="card-tint"></div>
-          <span class="card-number">07</span>
+          <span class="card-number">11</span>
           <div class="card-icon">
             <i data-lucide="zap" class="w-6 h-6"></i>
           </div>
@@ -919,10 +1065,10 @@
 
       <div class="grid sm:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
         <div class="reveal-left flyer-card">
-          <img src="flyer-office.jpg" alt="Sierra 24/7 — Head Office at 66 Sander's Street, Freetown and Branch Office at Rawbaw, Peninsular, Sierra Leone" loading="lazy" decoding="async" />
+          <img src="flyer-office.jpg" alt="Sierra 24/7 Head Office at 66 Sander's Street, Freetown and Branch Office at Baw Baw, Peninsular, Sierra Leone" loading="lazy" decoding="async" />
         </div>
         <div class="reveal-right flyer-card">
-          <img src="flyer-protected.jpg" alt="Sierra 24/7 — This Property is Protected — 24/7 Security Monitoring, On-Site and Mobile Patrols, Access Control and Risk Prevention" loading="lazy" decoding="async" />
+          <img src="flyer-protected.jpg" alt="Sierra 24/7: This Property is Protected. 24/7 Security Monitoring, On-Site and Mobile Patrols, Access Control and Risk Prevention" loading="lazy" decoding="async" />
         </div>
       </div>
 
@@ -958,7 +1104,7 @@
           Our Team in <span class="text-gradient" style="font-style: italic;">Action</span>
         </h2>
         <p class="reveal font-body text-base sm:text-lg text-sierra-slate max-w-2xl mx-auto" style="line-height: 1.7;">
-          Trained, uniformed, and deployed across Freetown — our security professionals safeguard businesses around the clock.
+          Trained, uniformed, and deployed across Freetown, our security professionals safeguard businesses around the clock.
         </p>
       </div>
     </div>
@@ -1001,7 +1147,7 @@
           </p>
         </div>
 
-        <!-- Right — Features -->
+        <!-- Right: Features -->
         <div class="space-y-6">
           <div class="reveal-right flex gap-4 sm:gap-5 p-4 sm:p-6 border border-black/[0.06] bg-white hover:border-sierra-navy/20 transition-colors duration-500">
             <div class="shrink-0 w-12 h-12 rounded-full border border-sierra-navy/15 flex items-center justify-center">
@@ -1029,7 +1175,7 @@
             </div>
             <div>
               <h3 class="font-display text-xl font-semibold text-sierra-navy-dark mb-1">Multi-Service Expertise</h3>
-              <p class="font-body text-base text-sierra-slate/70 leading-relaxed">From security to construction, logistics to cleaning — one partner for all your operational needs.</p>
+              <p class="font-body text-base text-sierra-slate/70 leading-relaxed">From security to construction, logistics to cleaning, one partner for all your operational needs.</p>
             </div>
           </div>
 
@@ -1048,6 +1194,158 @@
   </section>
 
 
+  <!-- ═══════════ CLIENTS ═══════════ -->
+  <section id="clients" class="py-16 sm:py-24 md:py-32 lg:py-40 px-4 sm:px-6 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-sierra-navy/[0.02] to-transparent pointer-events-none"></div>
+
+    <div class="relative max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-12 sm:mb-16 md:mb-20">
+        <span class="reveal font-body text-xs uppercase tracking-[0.3em] text-sierra-green mb-4 block">Our Clients</span>
+        <h2 class="reveal font-display text-[clamp(2.5rem,6vw,5rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-sierra-navy-dark">
+          Trusted Across<br>
+          <span class="text-gradient" style="font-style: italic;">Sierra Leone</span>
+        </h2>
+        <p class="reveal font-body text-base text-sierra-slate/70 max-w-xl mx-auto mt-5 leading-relaxed">The businesses, institutions, and residences that rely on us to keep their people and assets secure.</p>
+      </div>
+
+      <!-- Clients grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <!-- Access Bank -->
+        <div class="client-card reveal-scale">
+          <div class="client-icon"><i data-lucide="landmark" class="w-6 h-6"></i></div>
+          <h3 class="font-display text-xl font-semibold text-sierra-navy-dark">Access Bank</h3>
+          <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-slate/40">Banking</span>
+        </div>
+        <!-- Ramsy Medical House -->
+        <div class="client-card reveal-scale">
+          <div class="client-icon"><i data-lucide="heart-pulse" class="w-6 h-6"></i></div>
+          <h3 class="font-display text-xl font-semibold text-sierra-navy-dark">Ramsy Medical House</h3>
+          <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-slate/40">Healthcare</span>
+        </div>
+        <!-- Oasis -->
+        <div class="client-card reveal-scale">
+          <div class="client-icon"><i data-lucide="store" class="w-6 h-6"></i></div>
+          <h3 class="font-display text-xl font-semibold text-sierra-navy-dark">Oasis</h3>
+          <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-slate/40">Retail</span>
+        </div>
+        <!-- Belvoir Hotel -->
+        <div class="client-card reveal-scale">
+          <div class="client-icon"><i data-lucide="bed-double" class="w-6 h-6"></i></div>
+          <h3 class="font-display text-xl font-semibold text-sierra-navy-dark">Belvoir Hotel</h3>
+          <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-slate/40">Hospitality</span>
+        </div>
+        <!-- Lintex Paint Factory -->
+        <div class="client-card reveal-scale">
+          <div class="client-icon"><i data-lucide="factory" class="w-6 h-6"></i></div>
+          <h3 class="font-display text-xl font-semibold text-sierra-navy-dark">Lintex Paint Factory</h3>
+          <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-slate/40">Manufacturing</span>
+        </div>
+        <!-- Open Hubb (Flot) -->
+        <div class="client-card reveal-scale">
+          <div class="client-icon"><i data-lucide="building" class="w-6 h-6"></i></div>
+          <h3 class="font-display text-xl font-semibold text-sierra-navy-dark">Open Hubb (Flot)</h3>
+          <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-slate/40">Technology</span>
+        </div>
+        <!-- Residences -->
+        <div class="client-card reveal-scale">
+          <div class="client-icon"><i data-lucide="home" class="w-6 h-6"></i></div>
+          <h3 class="font-display text-xl font-semibold text-sierra-navy-dark">Residences</h3>
+          <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-slate/40">Residential</span>
+        </div>
+        <!-- Warehouse -->
+        <div class="client-card reveal-scale">
+          <div class="client-icon"><i data-lucide="warehouse" class="w-6 h-6"></i></div>
+          <h3 class="font-display text-xl font-semibold text-sierra-navy-dark">Warehouse</h3>
+          <span class="font-body text-xs uppercase tracking-[0.15em] text-sierra-slate/40">Storage</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════ CAREERS ═══════════ -->
+  <section id="careers" class="py-16 sm:py-24 md:py-32 lg:py-40 px-4 sm:px-6 relative overflow-hidden">
+    <div class="absolute inset-0 bg-sierra-navy-dark"></div>
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: repeating-linear-gradient(135deg, transparent, transparent 40px, rgba(255,255,255,0.1) 40px, rgba(255,255,255,0.1) 41px);"></div>
+
+    <div class="relative max-w-3xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-10 sm:mb-14">
+        <span class="reveal font-body text-xs uppercase tracking-[0.3em] text-sierra-green-light mb-4 block">Careers</span>
+        <h2 class="reveal font-display text-[clamp(2rem,5vw,4rem)] font-semibold leading-[1.1] tracking-[-0.02em] text-white mb-4">
+          Join Our<br>
+          <span style="background: linear-gradient(135deg, #3DA63C, #2B8C2A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: italic;">Team</span>
+        </h2>
+        <p class="reveal font-body text-white/50 max-w-lg mx-auto leading-relaxed">Ready to build a career with Sierra 24/7? Submit your details along with your CV and cover letter, and our team will be in touch.</p>
+      </div>
+
+      <!-- Application form -->
+      <form class="reveal-scale" action="https://formsubmit.co/Sierra247securicor@gmail.com" method="POST" enctype="multipart/form-data">
+        <!-- FormSubmit config -->
+        <input type="hidden" name="_subject" value="New Career Application | Sierra 24/7">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://sierra247.vercel.app/#careers">
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="career-label" for="apname">Full Name</label>
+            <input class="career-input" id="apname" type="text" name="Full Name" required placeholder="Your full name">
+          </div>
+          <div>
+            <label class="career-label" for="apemail">Email</label>
+            <input class="career-input" id="apemail" type="email" name="Email" required placeholder="you@example.com">
+          </div>
+          <div>
+            <label class="career-label" for="apphone">Phone</label>
+            <input class="career-input" id="apphone" type="tel" name="Phone" placeholder="+232 …">
+          </div>
+          <div>
+            <label class="career-label" for="apposition">Position</label>
+            <select class="career-input" id="apposition" name="Position Applied For" required>
+              <option value="" disabled selected>Select a role</option>
+              <option>Security Guard</option>
+              <option>CCTV Technician</option>
+              <option>Logistics / Driver</option>
+              <option>Cleaner</option>
+              <option>Construction Worker</option>
+              <option>Generator Technician</option>
+              <option>Administrative</option>
+              <option>General Application</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="career-label" for="apmsg">Cover Note <span class="text-white/30 normal-case tracking-normal">(optional)</span></label>
+          <textarea class="career-input" id="apmsg" name="Cover Note" rows="4" placeholder="Tell us a little about yourself and why you'd like to join."></textarea>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4 mb-6">
+          <div>
+            <label class="career-label" for="apcv">CV / Resume</label>
+            <input class="career-file" id="apcv" type="file" name="attachment" accept=".pdf,.doc,.docx" required>
+          </div>
+          <div>
+            <label class="career-label" for="apcover">Cover Letter <span class="text-white/30 normal-case tracking-normal">(optional)</span></label>
+            <input class="career-file" id="apcover" type="file" name="attachment" accept=".pdf,.doc,.docx">
+          </div>
+        </div>
+        <p class="font-body text-xs text-white/35 mb-6">Accepted formats: PDF, DOC, or DOCX (up to 5&nbsp;MB each).</p>
+
+        <div class="text-center">
+          <button type="submit" class="mag-btn mag-btn-fill rounded-full text-sm">
+            <i data-lucide="send" class="w-4 h-4"></i>
+            Submit Application
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
   <!-- ═══════════ CONTACT ═══════════ -->
   <section id="contact" class="py-16 sm:py-24 md:py-32 lg:py-40 px-4 sm:px-6 relative">
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-sierra-navy/[0.02] to-transparent pointer-events-none"></div>
@@ -1061,7 +1359,7 @@
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
         <!-- Email -->
         <div class="reveal-scale text-center p-5 sm:p-8 border border-black/[0.06] bg-white backdrop-blur-sm hover:border-sierra-navy/15 transition-colors duration-500">
           <div class="w-14 h-14 rounded-full border border-sierra-navy/15 flex items-center justify-center mx-auto mb-5">
@@ -1081,22 +1379,37 @@
           <a href="tel:+23288611138" class="font-body text-sm text-sierra-slate/80 hover:text-sierra-green transition-colors duration-300 block mt-1">+232 88 611 138</a>
         </div>
 
-        <!-- Head Office -->
-        <div class="reveal-scale text-center p-5 sm:p-8 border border-black/[0.06] bg-white backdrop-blur-sm hover:border-sierra-navy/15 transition-colors duration-500">
-          <div class="w-14 h-14 rounded-full border border-sierra-navy/15 flex items-center justify-center mx-auto mb-5">
-            <i data-lucide="building-2" class="w-6 h-6 text-sierra-navy"></i>
-          </div>
-          <h3 class="font-display text-xl font-semibold text-sierra-navy-dark mb-2">Head Office</h3>
-          <p class="font-body text-sm text-sierra-slate/80">66 Sander's Street,<br>Freetown, Sierra Leone</p>
-        </div>
-
         <!-- Branch Office -->
         <div class="reveal-scale text-center p-5 sm:p-8 border border-black/[0.06] bg-white backdrop-blur-sm hover:border-sierra-navy/15 transition-colors duration-500">
           <div class="w-14 h-14 rounded-full border border-sierra-navy/15 flex items-center justify-center mx-auto mb-5">
             <i data-lucide="map-pin" class="w-6 h-6 text-sierra-navy"></i>
           </div>
           <h3 class="font-display text-xl font-semibold text-sierra-navy-dark mb-2">Branch Office</h3>
-          <p class="font-body text-sm text-sierra-slate/80">Rawbaw, Peninsular,<br>Sierra Leone</p>
+          <p class="font-body text-sm text-sierra-slate/80">Baw Baw, Peninsular,<br>Sierra Leone</p>
+        </div>
+      </div>
+
+      <!-- Head Office interactive map -->
+      <div class="reveal-scale mt-4 sm:mt-6">
+        <div class="relative rounded-2xl overflow-hidden border border-black/[0.06] shadow-[0_8px_30px_rgba(27,51,101,0.1)]">
+          <div class="absolute top-0 left-0 z-10 flex items-center gap-3 m-4 px-4 py-3 rounded-xl bg-white/95 backdrop-blur-sm border border-black/[0.06] shadow-sm pointer-events-none">
+            <div class="w-10 h-10 rounded-full border border-sierra-navy/15 flex items-center justify-center shrink-0">
+              <i data-lucide="building-2" class="w-5 h-5 text-sierra-navy"></i>
+            </div>
+            <div class="text-left">
+              <h3 class="font-display text-lg font-semibold text-sierra-navy-dark leading-tight">Head Office</h3>
+              <p class="font-body text-xs text-sierra-slate/70">66 Sander's Street, Freetown</p>
+            </div>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=66+Sanders+St,+Freetown,+Sierra+Leone" target="_blank" rel="noopener noreferrer" class="absolute bottom-0 right-0 z-10 m-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sierra-navy text-white font-body text-xs uppercase tracking-[0.15em] hover:bg-sierra-navy-dark transition-colors duration-300">
+            <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+            Get Directions
+          </a>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2810.322217647283!2d-13.244726898645943!3d8.479293106956709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf04c3a1d7f7e847%3A0x782f5620964d1b71!2s66%20Sanders%20St%2C%20Freetown%2C%20Sierra%20Leone!5e0!3m2!1sen!2sfr!4v1783525059415!5m2!1sen!2sfr"
+            title="Sierra 24/7 Head Office, 66 Sander's Street, Freetown, Sierra Leone"
+            width="600" height="450" style="border:0; width:100%; height:380px; display:block;"
+            allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </div>
 
@@ -1105,7 +1418,7 @@
         <div class="inline-flex items-center gap-3 px-6 py-3 border border-black/[0.06] bg-white rounded-full">
           <div class="glow-dot"></div>
           <span class="font-body text-sm text-sierra-slate/80">
-            <span class="text-sierra-navy-dark font-medium">Open Now</span> &mdash; Mon – Sun, 7:30 AM – 7:30 PM
+            <span class="text-sierra-navy-dark font-medium">Open Now</span> &middot; Mon &ndash; Sun, 7:30 AM &ndash; 7:30 PM
           </span>
         </div>
       </div>
@@ -1150,6 +1463,8 @@
           <a href="#about" class="font-body text-base text-white/40 hover:text-sierra-green-light transition-colors duration-300">About Us</a>
           <a href="#services" class="font-body text-base text-white/40 hover:text-sierra-green-light transition-colors duration-300">Our Services</a>
           <a href="#gallery" class="font-body text-base text-white/40 hover:text-sierra-green-light transition-colors duration-300">Gallery</a>
+          <a href="#clients" class="font-body text-base text-white/40 hover:text-sierra-green-light transition-colors duration-300">Our Clients</a>
+          <a href="#careers" class="font-body text-base text-white/40 hover:text-sierra-green-light transition-colors duration-300">Careers</a>
           <a href="#why" class="font-body text-base text-white/40 hover:text-sierra-green-light transition-colors duration-300">Why Choose Us</a>
           <a href="#contact" class="font-body text-base text-white/40 hover:text-sierra-green-light transition-colors duration-300">Contact</a>
         </div>
