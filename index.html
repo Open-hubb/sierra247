@@ -674,22 +674,56 @@
     }
 
     /* Flyer showcase */
-    .flyer-card {
-      border-radius: 12px;
+    /* Presence photo */
+    .presence-photo {
+      position: relative;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 24px rgba(27, 51, 101, 0.12), 0 1px 4px rgba(0,0,0,0.06);
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      min-height: 320px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
     }
 
-    .flyer-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 12px 40px rgba(27, 51, 101, 0.18), 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .flyer-card img {
+    .presence-photo img {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
       display: block;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .presence-photo:hover img { transform: scale(1.04); }
+
+    /* Office cards */
+    .office-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .office-card:hover {
+      border-color: rgba(61, 166, 60, 0.35);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .office-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      color: #3DA63C;
+      background: rgba(61, 166, 60, 0.1);
+      border: 1px solid rgba(61, 166, 60, 0.2);
     }
   </style>
 </head>
@@ -1059,12 +1093,42 @@
         <p class="reveal font-body text-white/50 max-w-lg mx-auto leading-relaxed">Protecting properties and serving communities across Sierra Leone with dedicated security and logistics solutions.</p>
       </div>
 
-      <div class="grid sm:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
-        <div class="reveal-left flyer-card">
-          <img src="flyer-office.jpg" alt="Sierra 24/7 Head Office at 66 Sander's Street, Freetown and Branch Office at Baw Baw, Peninsular, Sierra Leone" loading="lazy" decoding="async" />
+      <div class="grid md:grid-cols-2 gap-6 sm:gap-8 items-stretch">
+        <!-- Authentic on-site photography -->
+        <div class="reveal-left presence-photo">
+          <img src="slide-7.jpg" alt="A Sierra 24/7 supervisor and officer on duty outside a client premises in Freetown" loading="lazy" decoding="async" />
         </div>
-        <div class="reveal-right flyer-card">
-          <img src="flyer-protected.jpg" alt="Sierra 24/7: This Property is Protected. 24/7 Security Monitoring, On-Site and Mobile Patrols, Access Control and Risk Prevention" loading="lazy" decoding="async" />
+
+        <!-- Office locations -->
+        <div class="reveal-right flex flex-col gap-4">
+          <div class="office-card">
+            <div class="office-icon"><i data-lucide="building-2" class="w-5 h-5"></i></div>
+            <div>
+              <h3 class="font-display text-2xl font-semibold text-white mb-1">Head Office</h3>
+              <p class="font-body text-sm text-white/60 leading-relaxed">66 Sander's Street,<br>Freetown, Sierra Leone</p>
+            </div>
+          </div>
+
+          <div class="office-card">
+            <div class="office-icon"><i data-lucide="map-pin" class="w-5 h-5"></i></div>
+            <div>
+              <h3 class="font-display text-2xl font-semibold text-white mb-1">Branch Office</h3>
+              <p class="font-body text-sm text-white/60 leading-relaxed">Baw Baw, Peninsular,<br>Sierra Leone</p>
+            </div>
+          </div>
+
+          <div class="office-card">
+            <div class="office-icon"><i data-lucide="phone" class="w-5 h-5"></i></div>
+            <div class="min-w-0">
+              <h3 class="font-display text-2xl font-semibold text-white mb-2">Reach Us</h3>
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
+                <a href="tel:+23279611138" class="font-body text-sm text-white/60 hover:text-sierra-green-light transition-colors duration-300">+232 79 611 138</a>
+                <span class="text-white/20">&middot;</span>
+                <a href="tel:+23288611138" class="font-body text-sm text-white/60 hover:text-sierra-green-light transition-colors duration-300">+232 88 611 138</a>
+              </div>
+              <a href="mailto:Sierra247securicor@gmail.com" class="font-body text-sm text-white/60 hover:text-sierra-green-light transition-colors duration-300 break-all">Sierra247securicor@gmail.com</a>
+            </div>
+          </div>
         </div>
       </div>
 
